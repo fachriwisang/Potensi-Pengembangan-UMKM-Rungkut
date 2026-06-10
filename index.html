@@ -18,11 +18,63 @@
             padding: 0;
             margin: 0;
         }
+        #welcome-screen{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:9999;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.welcome-box{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    max-width:500px;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+.welcome-box button{
+    padding:10px 25px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
         </style>
         <title></title>
     </head>
     <body>
-        <div id="map">
+
+<div id="welcome-screen">
+    <div class="welcome-box">
+        <h3>WEBGIS</h3>
+
+        <h1>
+            Analisis Potensi Pengembangan
+            Zona UMKM
+        </h1>
+
+        <p>
+            Kecamatan Rungkut, Kota Surabaya
+        </p>
+
+        <p>
+            Oleh:<br>
+            Kelompok 4
+        </p>
+
+        <button onclick="masukMap()">MASUK</button>
+    </div>
+</div>
+
+<div id="map"></div>
         </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
@@ -537,6 +589,10 @@
         });
         lay.addTo(map);
         setBounds();
-        </script>        
+        <script>
+function masukMap(){
+    document.getElementById("welcome-screen").style.display = "none";
+}
+</script>        
     </body>
 </html>
