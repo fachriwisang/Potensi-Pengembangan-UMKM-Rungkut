@@ -18,111 +18,12 @@
             padding: 0;
             margin: 0;
         }
-       #welcome-screen{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-
-    backdrop-filter: blur(8px);
-    background: rgba(0,0,0,0.25);
-
-    z-index:9999;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    transition: opacity 0.6s ease;
-}
-
-.welcome-box{
-    background: rgba(108,108,108,0.85);
-
-    backdrop-filter: blur(15px);
-
-    color:white;
-
-    padding:40px;
-    border-radius:20px;
-
-    text-align:center;
-    max-width:600px;
-
-    box-shadow:
-    0 8px 32px rgba(0,0,0,0.3);
-
-    border:1px solid rgba(255,255,255,0.15);
-
-    transition: all 0.4s ease;
-}
-
-.welcome-box h1{
-    margin-bottom:15px;
-    font-size:42px;
-}
-
-.welcome-box h3{
-    color:#d8e6e0;
-    letter-spacing:2px;
-}
-
-.welcome-box p{
-    color:#f0f0f0;
-}
-
-.welcome-box button{
-    margin-top:15px;
-
-    background:#00aa55;
-    color:white;
-
-    border:none;
-    border-radius:12px;
-
-    padding:12px 30px;
-
-    font-size:16px;
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:0.3s;
-}
-
-.welcome-box button:hover{
-    transform:translateY(-2px);
-    background:#00c864;
-}
         </style>
         <title></title>
     </head>
     <body>
-
-<div id="welcome-screen">
-    <div class="welcome-box">
-        <h3>WEBGIS</h3>
-
-        <h1>
-            Analisis Potensi Pengembangan
-            Zona UMKM
-        </h1>
-
-        <p>
-            Kecamatan Rungkut, Kota Surabaya
-        </p>
-
-        <p>
-            Oleh:<br>
-            Kelompok 4
-        </p>
-
-        <button onclick="masukMap()">MASUK</button>
-    </div>
-</div>
-
-<div id="map"></div>
+        <div id="map">
+        </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/L.Control.Layers.Tree.min.js"></script>
@@ -635,22 +536,7 @@
             collapsed: true,
         });
         lay.addTo(map);
-setBounds();
-</script>
-
-<script>
-function masukMap(){
-
-    const screen = document.getElementById("welcome-screen");
-
-    screen.style.opacity = "0";
-
-    setTimeout(() => {
-        screen.style.display = "none";
-    }, 600);
-
-}
-</script>
-
-</body>
+        setBounds();
+        </script>        
+    </body>
 </html>
